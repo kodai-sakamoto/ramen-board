@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'PostsController@index');
 
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
@@ -21,8 +19,17 @@ Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
+Route::post('kensaku','PostsController@kensaku')->name('posts.kensaku');
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::resource('users', 'UserController', ['only' => ['show']]);
+    Route::resource('users', 'UsersController', ['only' => ['show']]);
     Route::resource('posts', 'PostsController', ['only' =>['store', 'destroy']]);
+    Route::post('kensaku','PostsController@kensaku')->name('posts.kensaku');
+    
+    Route::group(['prefix' => 'microposts/{id}'], function () {
+        Route::post('favorite', 'FavoriteController@store')->name('favorites.favorite');
+        Route::delete('unfavorite', 'FavoriteController@destroy')->name('favorites.unfavorite');
+        Route::get('favorites', 'PostsController@favorites')->name('favorite.favorites');
+    });
+    
 });

@@ -1,18 +1,25 @@
 @charset "utf-8";
 
-main {
+body{
 	background-color: #ffe5cc;
-	padding: 20px;
-	border-radius: 5px;
-	max-width: 1000px;
-	margin: 50px auto;
-	height: 200vh;
 }
+
+
+main {
+	background-color: #fff;
+	border-radius: 10px;
+	padding:10px;
+	
+	
+}
+
+
 
 menu{
 	background-color: #ffe5cc;
 	padding: 20px;
 }
+
 
 .navbar{
 	background-color: #ff7f00;
@@ -64,8 +71,9 @@ menu{
 	margin-bottom: 0;
 }
 
-.menu{
-	background-color: #ffe5cc;
+.rankuser{
+	background-color: #ffbf7f;
+	border-radius: 10px;
 	display: flex;
 	margin: 0;
 	width: 100%;
@@ -73,10 +81,13 @@ menu{
 	padding: 0px;
 }
 
-.menu a{
-	color: #828282;
-	margin-bottom: 0;
+.rankuser > div > a{
+	color: #fff;
+}
+
+.rankuser1{
 	padding: 20px;
+	
 }
 
 .modal-m{
@@ -123,4 +134,39 @@ menu{
 .mask.active {
 	opacity: 0.7;
 	visibility: visible;
+}
+
+/*register*/
+.main-register{
+	background-color: #ffe5cc;
+}
+
+.orange-button{
+	background-color:#ff7f00 !important;
+	color: #fff !important;
+}
+
+.orange-button a {
+	color: #fff;
+}
+
+.main2{
+	background-color: #fff;
+}
+.white-button{
+	background-color: white;
+	color: black !important;
+}
+
+.white-button a {
+	color: black !important;
+}
+
+.itiran {
+	border-top:solid 0.5px;
+}
+
+.itiran img{
+	max-width: 150px;
+	max-height:150px;
 }

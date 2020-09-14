@@ -18,7 +18,7 @@
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
                 
-                {!! Form::submit('ログイン', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit('ログイン', ['class' => 'btn btn btn-block orange-button']) !!}
             {!! Form::close() !!}
             
             <p class="mt-2">登録されてない方はこちらに {!! link_to_route('signup.get', '登録') !!}</p>
